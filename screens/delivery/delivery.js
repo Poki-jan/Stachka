@@ -13,7 +13,8 @@ function Deliverys(img, name, price) {
   return deliverysItem;
 }
 
-export const Delivery = () => {
+export const Delivery = () => 
+{
   const [delivery, setMovies] = useState({});
   
   useEffect(() => 
