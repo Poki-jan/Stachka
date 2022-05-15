@@ -36,10 +36,6 @@ export const Delivery = () =>
   {
     fetch('https://poki-san13.000webhostapp.com/InputIItem/', {
       method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
       body: JSON.stringify({
  
         item_title : title,
@@ -54,7 +50,7 @@ export const Delivery = () =>
           .then((responseJson) => {
  
             // Showing response message coming from server after inserting records.
-            Alert.alert(responseJson);
+            console.log(responseJson);
  
           }).catch((error) => {
             console.error(error);
@@ -77,6 +73,9 @@ export const Delivery = () =>
               DeliverysItemAll()
             }
           </View>
+          {
+            ItemExport("БУРГЕР С ВИШНЕЙ С ПРОВАНСКИМИ ТРАВАМИ И БЕКОНОМ","https://stachka-oz.ru/wp-content/uploads/2021/10/burger-s-vishnej.jpg","378")
+          }
         </ScrollView>
     </View>
   );
