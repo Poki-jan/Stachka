@@ -32,6 +32,34 @@ export const Delivery = () =>
       return Deliverys(delivery[i].img,delivery[i].title,delivery[i].price)
     }
   }
+  function ItemExport (title, img, price)
+  {
+    fetch('https://poki-san13.000webhostapp.com/InputIItem/', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+ 
+        item_title : title,
+ 
+        item_img : img,
+ 
+        item_price : price
+ 
+      })
+ 
+      }).then((response) => response.json())
+          .then((responseJson) => {
+ 
+            // Showing response message coming from server after inserting records.
+            Alert.alert(responseJson);
+ 
+          }).catch((error) => {
+            console.error(error);
+          });
+  }
 
   return (
     
