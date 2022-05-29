@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
-export default function App() {
+export function Header() {
   return (
     <View style={styles.container}>
      
