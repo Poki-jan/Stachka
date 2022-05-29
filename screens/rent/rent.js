@@ -8,11 +8,11 @@ export const Rent= () =>  {
   return (
     
     <View style={styles.container}>
-      <StatusBar />
+     
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-          <Header/>
+        <Header text="Аренда" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg'/>
         </View>
 
         {/* Рабочая область */}

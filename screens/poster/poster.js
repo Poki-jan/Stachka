@@ -19,12 +19,9 @@ export const Poster = () =>  {
   return (
     
     <View style={styles.container}>
-      <StatusBar />
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
-        <View>
-          <Header/>
-        </View>
+        <Header text="Афиша" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg'/>
 
         {/* Рабочая область */}
           <View style={styles.work}>

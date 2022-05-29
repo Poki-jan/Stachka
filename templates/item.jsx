@@ -1,11 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
-// import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// const onSubmit = async () => {
-//   setState({'token':'abc123'})
-//   await AsyncStorage.setItem('token','abc123')
-// }
 
 export const Item = (props) =>
 {

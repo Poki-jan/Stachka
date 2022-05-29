@@ -1,35 +1,56 @@
-import React from 'react';
-import { StyleSheet, View, ImageBackground, Text} from 'react-native';
+import * as React from 'react';
+import { StyleSheet, View, Text, ImageBackground } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
-const image = {uri: "https://stachka-oz.ru/wp-content/themes/sela/images/bricks.jpg"};
-
-export function Header()
-{
-    return (
-        <View style={styles.back}>
-            <ImageBackground source={require('./img/bricks.jpg')} resizeMode="cover" style={styles.image}>
-                <Text style={styles.txt_one}>СТАЧКА</Text> 
-                <Text style={styles.txt_two}>ПРОСТРАНСТВО КРЕАТИВНОГО КЛАСТЕРА</Text>
-            </ImageBackground>
-        </View>
-    );
+export const Header = (props) => {
+  return (
+    <View style={styles.container}>
+      <ImageBackground source={{uri: props.image}} resizeMode="cover" style={styles.image}>
+        <LinearGradient 
+          // Background Linear Gradient
+          colors={['rgba(255,255,255,0.98)', 'transparent']}
+          style={styles.background} start={{ x: -0.24, y: 0.63}} end={{x: -0.1, y: -0.37}}/>
+          <View style={{ display: 'flex', flexDirection:"row"}}>
+            <Text style={styles.text}>{props.text}</Text>
+            <Text style={styles.trash}>{props.trash}</Text>
+          </View>
+      </ImageBackground>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-    image: 
-    {
-        padding: "4%"
-    },
-    txt_one:
-    {
-        textAlign: 'center',
-        fontSize: 40,
-        fontWeight: "bold"
-    },
-    txt_two:
-    {
-        textAlign: 'center',
-        fontSize: 10,
-    }
-  });
-  
+  container: 
+  {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 250,
+  },
+  background: 
+  {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+    height: 250,
+  },
+  image: 
+  {
+    width:"100%",
+    height:"100%",
+  },
+  text: 
+  {
+    paddingTop:155,
+    paddingLeft:11,
+    fontSize:48,
+  },
+  trash: 
+  {
+    paddingTop:170,
+    paddingLeft:13,
+    fontSize:16,
+    width:"35%",
+  }
+});

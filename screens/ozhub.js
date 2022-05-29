@@ -9,11 +9,11 @@ export const OzHub = () =>  {
   return (
     
     <View style={styles.container}>
-      <StatusBar />
+     
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-          <Header/>
+          <Header text="OZ-HUB" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg'/>
         </View>
 
         {/* Рабочая область */}

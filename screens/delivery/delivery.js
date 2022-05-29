@@ -60,11 +60,11 @@ export const Delivery = () =>
   return (
     
     <View style={styles.container}>
-      <StatusBar />
+      
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-          <Header/>
+        <Header text="Фуд-холл" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg' trash="нет продуктов в корзине"/>
         </View>
 
         {/* Рабочая область */}
@@ -73,9 +73,6 @@ export const Delivery = () =>
               DeliverysItemAll()
             }
           </View>
-          {
-            ItemExport("БУРГЕР С ВИШНЕЙ С ПРОВАНСКИМИ ТРАВАМИ И БЕКОНОМ","https://stachka-oz.ru/wp-content/uploads/2021/10/burger-s-vishnej.jpg","378")
-          }
         </ScrollView>
     </View>
   );
