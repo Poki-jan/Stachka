@@ -21,7 +21,7 @@ export const Poster = () =>  {
     <View style={styles.container}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
-        <Header text="Афиша" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg'/>
+        <Header text="Афиша" image='https://stachka-oz.ru/wp-content/themes/sela/images/morozoff/11.jpg'/>
 
         {/* Рабочая область */}
           <View style={styles.work}>

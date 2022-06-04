@@ -8,8 +8,8 @@ export const Header = (props) => {
       <ImageBackground source={{uri: props.image}} resizeMode="cover" style={styles.image}>
         <LinearGradient 
           // Background Linear Gradient
-          colors={['rgba(255,255,255,0.98)', 'transparent']}
-          style={styles.background} start={{ x: -0.24, y: 0.63}} end={{x: -0.1, y: -0.37}}/>
+          colors={['rgba(255,255,255,1)', 'transparent']}
+          style={styles.background} start={{ x: -0.3, y: 0.63}} end={{x: -0.1, y: -0.1}}/>
           <View style={{ display: 'flex', flexDirection:"row"}}>
             <Text style={styles.text}>{props.text}</Text>
             <Text style={styles.trash}>{props.trash}</Text>
@@ -23,9 +23,7 @@ const styles = StyleSheet.create({
   container: 
   {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 250,
+    height: 380,
   },
   background: 
   {
@@ -33,22 +31,22 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     top: 0,
-    height: 250,
+    height: 380,
   },
   image: 
   {
     width:"100%",
-    height:"100%",
+    height:"97%",
   },
   text: 
   {
-    paddingTop:155,
+    paddingTop:275,
     paddingLeft:11,
     fontSize:48,
   },
   trash: 
   {
-    paddingTop:170,
+    paddingTop:290,
     paddingLeft:13,
     fontSize:16,
     width:"35%",

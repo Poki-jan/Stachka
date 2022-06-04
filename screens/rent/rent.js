@@ -12,7 +12,7 @@ export const Rent= () =>  {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-        <Header text="Аренда" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg'/>
+        <Header text="Аренда" image='https://stachka-oz.ru/wp-content/uploads/2021/10/073.jpg'/>
         </View>
 
         {/* Рабочая область */}

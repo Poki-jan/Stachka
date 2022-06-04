@@ -13,7 +13,7 @@ export const OzHub = () =>  {
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-          <Header text="OZ-HUB" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg'/>
+          <Header text="Главная" image='https://stachka-oz.ru/wp-content/uploads/2021/10/073.jpg'/>
         </View>
 
         {/* Рабочая область */}

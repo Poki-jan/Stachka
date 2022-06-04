@@ -5,11 +5,10 @@ import { Header } from '../../templates/header.jsx';
 
 function Deliverys(img, name, price) { 
   var deliverysItem = [];
-  
-  for (let index = 0; index < 8; index++) {
+  console.log(name);
+  for (let index = 0; index < 4; index++) {
     deliverysItem.push(<Item key={deliverysItem.toString()} image={img} name={name} price={price}/>)
   }
-  
   return deliverysItem;
 }
 
@@ -27,10 +26,12 @@ export const Delivery = () =>
 
   const DeliverysItemAll = () =>
   {
+    var items = [];
     for (let i = 0; i < delivery.length; i++) 
     {
-      return Deliverys(delivery[i].img,delivery[i].title,delivery[i].price)
+      items.push(Deliverys(delivery[i].img,delivery[i].title,delivery[i].price))
     }
+    return  items
   }
   function ItemExport (title, img, price)
   {
@@ -88,7 +89,7 @@ const styles = StyleSheet.create({
   {
     width:"100%", 
     display:"flex", 
-    flexDirection:"row", 
+    flexDirection:"column", 
     justifyContent: "space-evenly", 
     flexWrap:"wrap"
   },
