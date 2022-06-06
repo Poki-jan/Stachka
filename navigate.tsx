@@ -1,13 +1,15 @@
 import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer,createNavigationContainerRef } from '@react-navigation/native';
 import { DeliveryItem } from './screens/delivery/deliveryItem';
 
 const DeliveryStack = createNativeStackNavigator()
 
-export const Navigator = () =>
+// export const navigationRef = createNavigationContainerRef()
 
+export const Navigator = () =>
 {
+    // navigationRef.navigate("detail_item");
     return(
         <NavigationContainer>
             <DeliveryStack.Navigator>
