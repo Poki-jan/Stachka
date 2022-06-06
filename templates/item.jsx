@@ -1,4 +1,3 @@
-import { BottomTabBar } from '@react-navigation/bottom-tabs';
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
 
