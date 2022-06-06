@@ -10,7 +10,10 @@ export const Item = (props) =>
               <Image style={styles.image_item} source={{uri: props.image}}/>
 
               <View style={styles.item_block_text}>
-                <Text style={styles.text_name}>{props.name}</Text>
+                <View>
+                  <Text style={styles.text_name}>{props.name}</Text>
+                  <Text style={styles.text_unit}>{props.unit}</Text>
+                </View>
                 <View style={styles.item_block_buy}>
                   <Text style={styles.buy_txt}>{props.price} ₽</Text>
                   <TouchableOpacity style={styles.button_buy}>
@@ -84,5 +87,10 @@ const styles = StyleSheet.create({
     {
       width:"51%",
       justifyContent:"space-between"
+    },
+    text_unit:
+    {
+      fontSize: 15,
+      color:"#9E9E9E"
     }
   });

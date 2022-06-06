@@ -3,11 +3,11 @@ import { StyleSheet, View, ScrollView, StatusBar} from 'react-native';
 import { Item } from '../../templates/item.jsx'; 
 import { Header } from '../../templates/header.jsx';
 
-function Deliverys(img, name, price) { 
+function Deliverys(img, name, price, unit) { 
   var deliverysItem = [];
   console.log(name);
   for (let index = 0; index < 4; index++) {
-    deliverysItem.push(<Item key={deliverysItem.toString()} image={img} name={name} price={price}/>)
+    deliverysItem.push(<Item key={deliverysItem.toString()} unit={unit} image={img} name={name} price={price}/>)
   }
   return deliverysItem;
 }
@@ -29,7 +29,7 @@ export const Delivery = () =>
     var items = [];
     for (let i = 0; i < delivery.length; i++) 
     {
-      items.push(Deliverys(delivery[i].img,delivery[i].title,delivery[i].price))
+      items.push(Deliverys(delivery[i].img,delivery[i].title,delivery[i].price, delivery[i].unit))
     }
     return  items
   }
