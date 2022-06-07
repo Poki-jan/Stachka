@@ -3,7 +3,7 @@ import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
 import { createNavigationContainerRef, useNavigation } from '@react-navigation/native';
 
 export const navigationRef = createNavigationContainerRef();
-const navigation = useNavigation();
+// const navigation = useNavigation();
 
 export function Item (props)
 {
@@ -18,7 +18,7 @@ export function Item (props)
                 </View>
                 <View style={styles.item_block_buy}>
                   <Text style={styles.buy_txt}>{props.price} ₽</Text>
-                  <TouchableOpacity onPress={() => {navigationRef.navigate('detail_item')}} style={styles.button_buy}>
+                  <TouchableOpacity onPress={() => {navigationRef.navigate('detail_item','')}} style={styles.button_buy}>
                     <Text style={styles.text_item}>+</Text>
                   </TouchableOpacity>
                   </View>
