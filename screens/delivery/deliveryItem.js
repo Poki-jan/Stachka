@@ -13,12 +13,12 @@ export const DeliveryItem = () =>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-        <Header text="Фуд-холл" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg' trash="нет продуктов в корзине"/>
+        <Header text="Детальная" image='https://stachka-oz.ru/wp-content/uploads/2021/10/classic.jpg'/>
         </View>
 
         {/* Рабочая область */}
           <View style={styles.work}>
-            <Text>HIIII !!!!!</Text>
+            <Text>\_( ' - ' )_/ Тут пусто т.к. еще в разработке!</Text>
           </View>
         </ScrollView>
     </View>

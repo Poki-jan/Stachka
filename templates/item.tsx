@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
+import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} from 'react-native';
 import { createNavigationContainerRef, useNavigation } from '@react-navigation/native';
 
-export const navigationRef = createNavigationContainerRef();
+export const navigationRef = createNavigationContainerRef()
 // const navigation = useNavigation();
 
 export function navigate(name: any, params?: any) {
@@ -14,22 +14,24 @@ export function navigate(name: any, params?: any) {
 export function Item (props: any)
 {
     return (
-    <View style={styles.item_block}>
+    <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('detail_item')}}>
+      <View style={styles.item_block}>
               <Image style={styles.image_item} source={{uri: props.image}}/>
 
               <View style={styles.item_block_text}>
-                <View>
+                <View style={styles.title_unit}>
                   <Text style={styles.text_name}>{props.name}</Text>
                   <Text style={styles.text_unit}>{props.unit}</Text>
                 </View>
                 <View style={styles.item_block_buy}>
                   <Text style={styles.buy_txt}>{props.price} ₽</Text>
-                  <TouchableOpacity onPress={() => {navigate('detail_item')}} style={styles.button_buy}>
+                  <TouchableOpacity style={styles.button_buy}>
                     <Text style={styles.text_item}>+</Text>
                   </TouchableOpacity>
-                  </View>
+                </View>
               </View>
             </View>
+    </TouchableHighlight>
     )
 }
 
@@ -43,7 +45,8 @@ const styles = StyleSheet.create({
     },
     image_item:
     {
-      width: "48%",
+      width: 150,
+      height: 150,
       borderRadius: 12,
       paddingHorizontal:6
     },
@@ -70,7 +73,7 @@ const styles = StyleSheet.create({
       // fontFamily: 'Raleway',
       marginVertical:6,
       color: "black",
-      fontSize: 15,
+      fontSize: 15.3,
       fontWeight:"bold"
     },
     buy_txt:
@@ -98,5 +101,9 @@ const styles = StyleSheet.create({
     {
       fontSize: 15,
       color:"#9E9E9E"
+    },
+    title_unit:
+    {
+
     }
   });

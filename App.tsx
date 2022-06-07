@@ -12,6 +12,7 @@ import { SvgDelivery } from './svg/svgDelivery.js';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DeliveryItem } from './screens/delivery/deliveryItem';
+import { navigationRef } from './templates/item';
 
 const DeliveryStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -29,7 +30,7 @@ export default function App() {
 
   return (
     
-    <NavigationContainer>
+    <NavigationContainer ref={navigationRef}>
 
       <Tab.Navigator screenOptions={{
         tabBarHideOnKeyboard: true,
