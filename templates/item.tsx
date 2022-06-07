@@ -3,7 +3,6 @@ import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} fr
 import { createNavigationContainerRef, useNavigation } from '@react-navigation/native';
 
 export const navigationRef = createNavigationContainerRef()
-// const navigation = useNavigation();
 
 export function navigate(name: any, params?: any) {
   if (navigationRef.isReady()) {

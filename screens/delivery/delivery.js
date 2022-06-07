@@ -5,7 +5,6 @@ import { Header } from '../../templates/header.jsx';
 
 function Deliverys(img, name, price, unit) { 
   var deliverysItem = [];
-  // console.log(name);
   for (let index = 0; index < 4; index++) {
     deliverysItem.push(<Item key={deliverysItem.toString()} unit={unit} image={img} name={name} price={price}/>)
   }
