@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView, StatusBar} from 'react-native';
-import { Item } from '../../templates/item.jsx'; 
+import { Item } from '../../templates/item.tsx'; 
 import { Header } from '../../templates/header.jsx';
 
 function Deliverys(img, name, price, unit) { 

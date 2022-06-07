@@ -5,7 +5,13 @@ import { createNavigationContainerRef, useNavigation } from '@react-navigation/n
 export const navigationRef = createNavigationContainerRef();
 // const navigation = useNavigation();
 
-export function Item (props)
+export function navigate(name: any, params?: any) {
+  if (navigationRef.isReady()) {
+    navigationRef.navigate(name as never, params as never)
+  }
+}
+
+export function Item (props: any)
 {
     return (
     <View style={styles.item_block}>
@@ -18,7 +24,7 @@ export function Item (props)
                 </View>
                 <View style={styles.item_block_buy}>
                   <Text style={styles.buy_txt}>{props.price} ₽</Text>
-                  <TouchableOpacity onPress={() => {navigationRef.navigate('detail_item','')}} style={styles.button_buy}>
+                  <TouchableOpacity onPress={() => {navigate('detail_item')}} style={styles.button_buy}>
                     <Text style={styles.text_item}>+</Text>
                   </TouchableOpacity>
                   </View>
@@ -37,9 +43,7 @@ const styles = StyleSheet.create({
     },
     image_item:
     {
-      width: "48%", 
-      width: 150,
-      height: 150,
+      width: "48%",
       borderRadius: 12,
       paddingHorizontal:6
     },

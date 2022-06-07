@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity, SafeAreaView, ScrollView, StatusBar, ImageBackground } from 'react-native';
 import { Header } from "../templates/header.jsx";
-import { Item } from "../templates/item.jsx";
+import { Item } from "../templates/item.tsx";
 import { PosterItem } from "../templates/poster.jsx";
 
 export const OzHub = () =>  {
