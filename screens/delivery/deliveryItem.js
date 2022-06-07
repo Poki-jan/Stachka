@@ -1,62 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, ScrollView, StatusBar} from 'react-native';
-import { Item } from '../../templates/item.jsx'; 
+import { StyleSheet, View, ScrollView, Text} from 'react-native';
 import { Header } from '../../templates/header.jsx';
 
-function Deliverys(img, name, price, unit) { 
-  var deliverysItem = [];
-  console.log(name);
-  for (let index = 0; index < 4; index++) {
-    deliverysItem.push(<Item key={deliverysItem.toString()} unit={unit} image={img} name={name} price={price}/>)
-  }
-  return deliverysItem;
-}
 
 export const DeliveryItem = () => 
 {
-  const [delivery, setMovies] = useState({});
-  
-  useEffect(() => 
-  {
-  	fetch("https://poki-san13.000webhostapp.com/ShowAllList/")
-	  .then((res) => res.json())
-	  .then((res) => setMovies(res))
-	  .catch((err) => console.error("Ошибка запроса:", err));
-  }, []);
-
-  const DeliverysItemAll = () =>
-  {
-    var items = [];
-    for (let i = 0; i < delivery.length; i++) 
-    {
-      items.push(Deliverys(delivery[i].img,delivery[i].title,delivery[i].price, delivery[i].unit))
-    }
-    return  items
-  }
-  function ItemExport (title, img, price)
-  {
-    fetch('https://poki-san13.000webhostapp.com/InputIItem/', {
-      method: 'POST',
-      body: JSON.stringify({
- 
-        item_title : title,
- 
-        item_img : img,
- 
-        item_price : price
- 
-      })
- 
-      }).then((response) => response.json())
-          .then((responseJson) => {
- 
-            // Showing response message coming from server after inserting records.
-            console.log(responseJson);
- 
-          }).catch((error) => {
-            console.error(error);
-          });
-  }
 
   return (
     
@@ -70,9 +18,6 @@ export const DeliveryItem = () =>
 
         {/* Рабочая область */}
           <View style={styles.work}>
-            {/* {
-              DeliverysItemAll()
-            } */}
             <Text>HIIII !!!!!</Text>
           </View>
         </ScrollView>
