@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, ScrollView, Text} from 'react-native';
+import { StyleSheet, View, ScrollView, Text,TouchableOpacity} from 'react-native';
 import { Header } from '../../templates/header.jsx';
+import { createNavigationContainerRef} from '@react-navigation/native';
+import { navigateGoBack } from '../../navigate';
 
+export const navigationRef1 = createNavigationContainerRef()
 
 export const DeliveryItem = () => 
 {
@@ -19,6 +22,7 @@ export const DeliveryItem = () =>
         {/* Рабочая область */}
           <View style={styles.work}>
             <Text>\_( ' - ' )_/ Тут пусто т.к. еще в разработке!</Text>
+            <TouchableOpacity style={styles.GoBack} onPress={() => {navigateGoBack()}}><Text style={{color:"white", textAlign:"center"}}>Назад</Text></TouchableOpacity>
           </View>
         </ScrollView>
     </View>
@@ -34,9 +38,14 @@ const styles = StyleSheet.create({
   work:
   {
     width:"100%", 
-    display:"flex", 
-    flexDirection:"column", 
-    justifyContent: "space-evenly", 
-    flexWrap:"wrap"
   },
+  GoBack:
+  {
+    width:"100%",
+    marginVertical:35,
+    paddingVertical:20,
+    paddingHorizontal:45,
+    backgroundColor:"black",
+    borderRadius:18,
+  }
 });

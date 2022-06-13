@@ -1,15 +1,16 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { DeliveryItem } from './screens/delivery/deliveryItem';
+import { createNavigationContainerRef } from '@react-navigation/native';
 
-const DeliveryStack = createNativeStackNavigator()
+export const navigationRef = createNavigationContainerRef()
 
-// export const navigationRef = createNavigationContainerRef()
+export function navigate(name: any, params?: any) {
+    if (navigationRef.isReady()) {
+      navigationRef.navigate(name as never, params as never)
+    }
+  }
 
-export const Navigator = () =>
-{
-    // navigationRef.navigate("detail_item");
-    return(
-        <></>
-    );
-}
+  export function navigateGoBack() {
+    if (navigationRef.isReady()) {
+      navigationRef.goBack()
+    }
+  }

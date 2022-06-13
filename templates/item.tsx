@@ -1,19 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} from 'react-native';
-import { createNavigationContainerRef, useNavigation } from '@react-navigation/native';
-
-export const navigationRef = createNavigationContainerRef()
-
-export function navigate(name: any, params?: any) {
-  if (navigationRef.isReady()) {
-    navigationRef.navigate(name as never, params as never)
-  }
-}
+import { createNavigationContainerRef} from '@react-navigation/native';
+import { navigate } from '../navigate';
 
 export function Item (props: any)
 {
     return (
-    <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('detail_item')}}>
+    <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('DeliveryItem')}}>
       <View style={styles.item_block}>
               <Image style={styles.image_item} source={{uri: props.image}}/>
 

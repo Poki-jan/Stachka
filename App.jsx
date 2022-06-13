@@ -9,19 +9,27 @@ import { SvgProfile } from './svg/svgProfile';
 import { SvgPoster } from './svg/svgPoster';
 import { SvgRent } from './svg/svgRent';
 import { SvgDelivery } from './svg/svgDelivery.js';
-
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DeliveryItem } from './screens/delivery/deliveryItem';
-import { navigationRef } from './templates/item';
+import { navigationRef } from './navigate';
 
 const DeliveryStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function DeliveryStackNav() {
+function DeliveryStackNav({ navigation, route }) {
+  React.useLayoutEffect(() => {
+    const routeName = getFocusedRouteNameFromRoute(route);
+    if (routeName == "DeliveryItem"){
+      navigation.setOptions({tabBarStyle: {display: 'none'}});
+    }else {
+      navigation.setOptions({tabBarStyle: {display: 'flex'}});
+    }
+}, [navigation, route]);
   return(
-  <DeliveryStack.Navigator initialRouteName='Delivery' screenOptions={{headerShown: false}}>
-        <DeliveryStack.Screen name="detail_item" component={DeliveryItem}></DeliveryStack.Screen>
+      <DeliveryStack.Navigator screenOptions={{headerShown: false}}>
         <DeliveryStack.Screen name="Delivery" component={Delivery}></DeliveryStack.Screen>
+        <DeliveryStack.Screen name="DeliveryItem" component={DeliveryItem}></DeliveryStack.Screen>
       </DeliveryStack.Navigator>
   )
 }
