@@ -6,8 +6,9 @@ import { navigateGoBack } from '../../navigate';
 
 export const navigationRef1 = createNavigationContainerRef()
 
-export const DeliveryItem = () => 
+export function DeliveryItem (props:any)
 {
+  const {id, img} = props.route.params;
 
   return (
     
@@ -16,12 +17,12 @@ export const DeliveryItem = () =>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
-        <Header text="Детальная" image='https://stachka-oz.ru/wp-content/uploads/2021/10/classic.jpg'/>
+        <Header text="Детальная" image={img}/>
         </View>
 
         {/* Рабочая область */}
           <View style={styles.work}>
-            <Text>\_( ' - ' )_/ Тут пусто т.к. еще в разработке!</Text>
+            <Text>\_( ' - ' )_/ Тут пусто т.к. еще в разработке! ID товара :{id}</Text>
             <TouchableOpacity style={styles.GoBack} onPress={() => {navigateGoBack()}}><Text style={{color:"white", textAlign:"center"}}>Назад</Text></TouchableOpacity>
           </View>
         </ScrollView>

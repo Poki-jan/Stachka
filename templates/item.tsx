@@ -6,7 +6,7 @@ import { navigate } from '../navigate';
 export function Item (props: any)
 {
     return (
-    <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('DeliveryItem')}}>
+    <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('DeliveryItem', {id:props.id, img:props.image})}}>
       <View style={styles.item_block}>
               <Image style={styles.image_item} source={{uri: props.image}}/>
 
