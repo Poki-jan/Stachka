@@ -15,9 +15,9 @@ export const Delivery = () =>
 {
   const [delivery, setMovies] = useState({});
   
-  useEffect(() => 
+  useEffect(async () => 
   {
-  	fetch("https://poki-san13.000webhostapp.com/ShowAllList/")
+  	await fetch("https://poki-san13.000webhostapp.com/ShowAllList/")
 	  .then((res) => res.json())
 	  .then((res) => setMovies(res))
 	  .catch((err) => console.error("Ошибка запроса:", err));
@@ -31,30 +31,6 @@ export const Delivery = () =>
       items.push(Deliverys(delivery[i].img,delivery[i].title,delivery[i].price, delivery[i].unit, delivery[i].id))
     }
     return  items
-  }
-  function ItemExport (title, img, price)
-  {
-    fetch('https://poki-san13.000webhostapp.com/InputIItem/', {
-      method: 'POST',
-      body: JSON.stringify({
- 
-        item_title : title,
- 
-        item_img : img,
- 
-        item_price : price
- 
-      })
- 
-      }).then((response) => response.json())
-          .then((responseJson) => {
- 
-            // Showing response message coming from server after inserting records.
-            console.log(responseJson);
- 
-          }).catch((error) => {
-            console.error(error);
-          });
   }
 
   return (
