@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, ScrollView, StatusBar} from 'react-native';
+import { StyleSheet, View, ScrollView, StatusBar } from 'react-native';
 import { Item } from '../../templates/item.tsx'; 
 import { Header } from '../../templates/header.jsx';
 
@@ -37,17 +37,24 @@ export const Delivery = () =>
     
     <View style={styles.container}>
       
+      <StatusBar barStyle="light-content" translucent={true} backgroundColor='transparent'/>
+
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         {/* Шапка */}
         <View>
+        
         <Header text="Фуд-холл" image='https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg' trash="нет продуктов в корзине"/>
         </View>
 
         {/* Рабочая область */}
           <View style={styles.work}>
-            {
+            {/* {
               DeliverysItemAll()
-            }
+            } */}
+            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
+            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
+            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
+            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
           </View>
         </ScrollView>
     </View>

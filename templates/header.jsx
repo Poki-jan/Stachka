@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, View, Text, ImageBackground } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { normalize } from '../functions/text_normalize'; 
 
 export const Header = (props) => {
   return (
@@ -9,10 +10,10 @@ export const Header = (props) => {
         <LinearGradient 
           // Background Linear Gradient
           colors={['rgba(255,255,255,1)', 'transparent']}
-          style={styles.background} start={{ x: -0.3, y: 0.63}} end={{x: -0.1, y: -0.1}}/>
+          style={styles.background} start={{ x: -0.2, y: 0.66}} end={{x: -0.1, y: -0.1}}/>
           <View style={{ display: 'flex', flexDirection:"row"}}>
             <Text style={styles.text}>{props.text}</Text>
-            <Text style={styles.trash}>{props.trash}</Text>
+            {/* <Text style={styles.trash}>{props.trash}</Text> */}
           </View>
       </ImageBackground>
     </View>
@@ -23,15 +24,15 @@ const styles = StyleSheet.create({
   container: 
   {
     flex: 1,
-    height: 380,
+    height: 311,
   },
   background: 
   {
-    position: 'absolute',
+    position: 'absolute', 
     left: 0,
     right: 0,
     top: 0,
-    height: 380,
+    height: 311,
   },
   image: 
   {
@@ -40,9 +41,10 @@ const styles = StyleSheet.create({
   },
   text: 
   {
-    paddingTop:275,
-    paddingLeft:11,
-    fontSize:48,
+    paddingTop: 220,
+    paddingLeft: 14,
+    fontSize: normalize(46),
+    fontWeight: "bold"
   },
   trash: 
   {

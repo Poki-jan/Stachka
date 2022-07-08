@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} from 'react-native';
+import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight, Dimensions, Platform, PixelRatio} from 'react-native';
 import { createNavigationContainerRef} from '@react-navigation/native';
 import { navigate } from '../navigate';
+import { normalize } from '../functions/text_normalize'; 
 
 export function Item (props: any)
 {
@@ -31,50 +32,72 @@ const styles = StyleSheet.create({
     text_item:
     {
       textAlign: "center",
-      paddingVertical: 10,
-      paddingHorizontal:46,
       color: "white",
+      fontWeight: "bold",
+      fontSize: normalize(18)
     },
     image_item:
     {
-      width: 150,
-      height: 150,
+      //width: "100%",
+      //maxWidth: 120,
+      //height: "100%",
+      //maxHeight: 130,
       borderRadius: 12,
-      paddingHorizontal:6
+      paddingHorizontal:6,
+      aspectRatio: 1/1.1,
+      flex: 1.4,
+      //shadowColor: "#000",
+      //shadowOffset: {
+      //  width: 0,
+      //  height: 2,
+      //},
+      //shadowOpacity: 0.25,
+      //shadowRadius: 3.84,
+      //elevation: 5,
     },
     item_block:
     {
+      position: "relative", 
       width: "100%", 
       marginVertical: 10,
-      paddingLeft:15,
-      paddingRight:17,
+      paddingHorizontal: 16,
       borderRadius: 15,
-      display:"flex", 
+      display:"flex",
       flexDirection:"row", 
-      justifyContent: "space-between",
+      // justifyContent: "space-between",
       
     },
     button_buy:
     {
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "row",
+      justifyContent: "center",
       backgroundColor: "black",
       marginVertical: 4,
-      borderRadius: 20
+      borderRadius: 12,
+      height: 42,
+      //maxWidth: 88,
+      flex: 1,
+      aspectRatio: 2/1
+      //width: "100%"
     },
     text_name:
     {
       // fontFamily: 'Raleway',
       marginVertical:6,
       color: "black",
-      fontSize: 15.3,
-      fontWeight:"bold"
+      fontSize: normalize(20),
+      fontWeight: "bold"
     },
     buy_txt:
     {
       color: "black",
-      fontSize: 17,
-      fontWeight:'normal',
+      fontSize: 22,
+      fontWeight:'bold',
       marginTop: 4,
-      alignSelf:"center"
+      alignSelf:"center",
+      flex: 1
     },
     item_block_buy:
     {
@@ -82,17 +105,19 @@ const styles = StyleSheet.create({
       flexDirection:"row",
       justifyContent:"space-between",
       width:"100%",
-      paddingVertical:8
+      paddingTop:8
     },
     item_block_text:
     {
-      width:"51%",
+      flex: 2,
+      paddingLeft: 13,
       justifyContent:"space-between"
     },
     text_unit:
     {
-      fontSize: 15,
-      color:"#9E9E9E"
+      fontSize: normalize(14),
+      color:"#9E9E9E",
+      fontWeight: "normal"
     },
     title_unit:
     {
