@@ -48,13 +48,13 @@ export const Delivery = () =>
 
         {/* Рабочая область */}
           <View style={styles.work}>
-            {/* {
+            {
               DeliverysItemAll()
-            } */}
+            }
+            {/* <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
             <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
             <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
-            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
-            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
+            <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/> */}
           </View>
         </ScrollView>
     </View>
