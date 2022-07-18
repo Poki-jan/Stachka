@@ -1,11 +1,12 @@
 import React from 'react';
-import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight, Dimensions, Platform, PixelRatio} from 'react-native';
-import { createNavigationContainerRef} from '@react-navigation/native';
+import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} from 'react-native';
 import { navigate } from '../navigate';
 import { normalize } from '../functions/text_normalize'; 
+import { Trash } from '../screens/delivery/functions/Trash';
 
 export function Item (props: any)
 {
+    const arrTrash = new Trash;
     return (
     <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('DeliveryItem', {id:props.id, img:props.image})}}>
       <View style={styles.item_block}>
@@ -18,7 +19,7 @@ export function Item (props: any)
                 </View>
                 <View style={styles.item_block_buy}>
                   <Text style={styles.buy_txt}>{props.price} ₽</Text>
-                  <TouchableOpacity style={styles.button_buy}>
+                  <TouchableOpacity onPress={()=>{arrTrash.AddTrash(props.id)}} style={styles.button_buy}>
                     <Text style={styles.text_item}>+</Text>
                   </TouchableOpacity>
                 </View>

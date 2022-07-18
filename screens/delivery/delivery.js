@@ -1,37 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView, StatusBar } from 'react-native';
-import { Item } from '../../templates/item.tsx'; 
-import { Header } from '../../templates/header.jsx';
+import { DeliverysItemAll } from './functions/DeliveryFunc'; 
+import { Header } from '../../templates/header';
 
-function Deliverys(img, name, price, unit, id) { 
-  var deliverysItem = [];
-  for (let index = 0; index < 4; index++) {
-    deliverysItem.push(<Item key={deliverysItem.toString()} unit={unit} image={img} name={name} price={price} id={id}/>)
-  }
-  return deliverysItem;
-}
 
 export const Delivery = () => 
 {
-  const [delivery, setMovies] = useState({});
+  const [delivery, setDelivery] = useState({});
   
   useEffect(async () => 
   {
   	await fetch("https://poki-san13.000webhostapp.com/ShowAllList/")
 	  .then((res) => res.json())
-	  .then((res) => setMovies(res))
+	  .then((res) => setDelivery(res))
 	  .catch((err) => console.error("Ошибка запроса:", err));
   }, []);
-
-  const DeliverysItemAll = () =>
-  {
-    var items = [];
-    for (let i = 0; i < delivery.length; i++) 
-    {
-      items.push(Deliverys(delivery[i].img,delivery[i].title,delivery[i].price, delivery[i].unit, delivery[i].id))
-    }
-    return  items
-  }
 
   return (
     
@@ -49,7 +32,7 @@ export const Delivery = () =>
         {/* Рабочая область */}
           <View style={styles.work}>
             {
-              DeliverysItemAll()
+              DeliverysItemAll(delivery)
             }
             {/* <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
             <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
