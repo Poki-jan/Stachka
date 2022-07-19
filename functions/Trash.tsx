@@ -1,4 +1,4 @@
-import { trashArr } from '../globalDelivery';
+import { trashArr } from '../screens/delivery/globalDelivery';
 
 export class Trash 
 {

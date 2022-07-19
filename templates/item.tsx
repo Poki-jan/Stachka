@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} from 'react-native';
 import { navigate } from '../navigate';
 import { normalize } from '../functions/text_normalize'; 
-import { Trash } from '../screens/delivery/functions/Trash';
+import { Trash } from '../functions/Trash';
 
 export function Item (props: any)
 {
