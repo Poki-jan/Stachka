@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer, DefaultTheme  } from '@react-navigation/native';
+import { NavigationContainer} from '@react-navigation/native';
 import { Delivery } from './screens/delivery/delivery.js';
 import { Rent } from './screens/rent/rent.js';
 import { Poster } from './screens/poster/poster.js';
@@ -14,7 +14,6 @@ import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { DeliveryItem } from './screens/delivery/deliveryItem';
 import { navigationRef } from './navigate';
-import { normalize } from './functions/text_normalize';
 
 const DeliveryStack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -42,7 +41,8 @@ function DeliveryStackNav({ navigation, route }) {
     }
 }, [navigation, route]);
   return(
-      <DeliveryStack.Navigator screenOptions={{headerShown: false,
+      <DeliveryStack.Navigator screenOptions={{
+        headerShown: false,
         tabBarStyle: {
           position: 'absolute',
           display: 'flex',
