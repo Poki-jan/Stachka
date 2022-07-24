@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, Image, View, TouchableOpacity, TouchableHighlight} from 'react-native';
 import { navigate } from '../navigate';
 import { normalize } from '../functions/text_normalize'; 
@@ -6,25 +6,30 @@ import { Trash } from '../functions/Trash';
 
 export function Item (props: any)
 {
+  const [quantity, setQuantity] = useState(0);
+
     const arrTrash = new Trash;
     return (
     <TouchableHighlight underlayColor={"white"} onPress={() => {navigate('DeliveryItem', {id:props.id, img:props.image})}}>
       <View style={styles.item_block}>
-              <Image style={styles.image_item} source={{uri: props.image}}/>
+        <Text style={{position:"absolute", marginHorizontal:0, zIndex:1, backgroundColor:"black", color:"white", paddingHorizontal:3, borderRadius:12}}>
+          {quantity}
+        </Text>
+        <Image style={styles.image_item} source={{uri: props.image}}/>
 
-              <View style={styles.item_block_text}>
-                <View style={styles.title_unit}>
-                  <Text style={styles.text_name}>{props.name}</Text>
-                  <Text style={styles.text_unit}>{props.unit}</Text>
-                </View>
-                <View style={styles.item_block_buy}>
-                  <Text style={styles.buy_txt}>{props.price} ₽</Text>
-                  <TouchableOpacity onPress={()=>{arrTrash.AddTrash(props.id)}} style={styles.button_buy}>
-                    <Text style={styles.text_item}>+</Text>
-                  </TouchableOpacity>
-                </View>
-              </View>
-            </View>
+        <View style={styles.item_block_text}>
+          <View style={styles.title_unit}>
+            <Text style={styles.text_name}>{props.name}</Text>
+            <Text style={styles.text_unit}>{props.unit}</Text>
+          </View>
+          <View style={styles.item_block_buy}>
+            <Text style={styles.buy_txt}>{props.price} ₽</Text>
+            <TouchableOpacity onPress={()=>{setQuantity(arrTrash.AddTrash(props.id))}} style={styles.button_buy}>
+              <Text style={styles.text_item}>+</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      </View>
     </TouchableHighlight>
     )
 }
@@ -39,22 +44,10 @@ const styles = StyleSheet.create({
     },
     image_item:
     {
-      //width: "100%",
-      //maxWidth: 120,
-      //height: "100%",
-      //maxHeight: 130,
       borderRadius: 12,
       paddingHorizontal:6,
       aspectRatio: 1/1.1,
       flex: 1.4,
-      //shadowColor: "#000",
-      //shadowOffset: {
-      //  width: 0,
-      //  height: 2,
-      //},
-      //shadowOpacity: 0.25,
-      //shadowRadius: 3.84,
-      //elevation: 5,
     },
     item_block:
     {
@@ -65,7 +58,7 @@ const styles = StyleSheet.create({
       borderRadius: 15,
       display:"flex",
       flexDirection:"row", 
-      // justifyContent: "space-between",
+      
       
     },
     button_buy:
@@ -78,10 +71,8 @@ const styles = StyleSheet.create({
       marginVertical: 4,
       borderRadius: 12,
       height: 42,
-      //maxWidth: 88,
       flex: 1,
       aspectRatio: 2/1
-      //width: "100%"
     },
     text_name:
     {

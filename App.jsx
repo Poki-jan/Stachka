@@ -107,7 +107,7 @@ export default function App() {
         <Tab.Screen name="Аренда" options={{headerShown: false, tabBarIcon: () => <SvgRent/>}} component={Rent} />
         <Tab.Screen name="Афиша" options={{headerShown: false, tabBarIcon: () => <SvgPoster/>}} component={Poster}/>
        
-        <Tab.Screen name="Меню" options={{headerShown: false, tabBarIcon: () => <SvgProfile/>}} component={OzHub} />
+        <Tab.Screen name="Меню" options={{headerShown: false, tabBarIcon: () => <SvgProfile />}} component={OzHub} />
       </Tab.Navigator>
     </NavigationContainer>
   );

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, ScrollView, StatusBar } from 'react-native';
-import { DeliverysItemAll } from './functions/DeliveryFunc'; 
+import { StyleSheet, View, ScrollView, StatusBar, Text } from 'react-native';
+import { DeliverysItemAll } from '../../functions/DeliveryFunc';
 import { Header } from '../../templates/header';
-
 
 export const Delivery = () => 
 {
@@ -38,6 +37,10 @@ export const Delivery = () =>
             <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
             <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/>
             <Item unit="100г" image="https://stachka-oz.ru/wp-content/uploads/2022/02/takos-ili-tako.jpg" name="Тест Бургер" price="100" id="1"/> */}
+            
+            <View style={{height:150}}>
+              <Text style={styles.textEnd}>Тут нет золота, Сильвер</Text>
+            </View>
           </View>
         </ScrollView>
     </View>
@@ -58,4 +61,8 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly", 
     flexWrap:"wrap"
   },
+  textEnd:{
+    textAlign:"center",
+    fontSize:20
+  }
 });
