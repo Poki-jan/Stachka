@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, ImageBackground, Text} from 'react-native';
 
-const image = {uri: "https://stachka-oz.ru/wp-content/themes/sela/images/bricks.jpg"};
+
 
 export function Header()
 {
