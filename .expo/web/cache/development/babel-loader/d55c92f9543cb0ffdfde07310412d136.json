@@ -1,0 +1,1 @@
+{"ast":null,"code":"export var trashArr = new Array();","map":{"version":3,"sources":["/home/larintexterra/App/Stachka/screens/delivery/globalDelivery.tsx"],"names":["trashArr","Array"],"mappings":"AAAA,OAAO,IAAIA,QAAQ,GAAG,IAAIC,KAAJ,EAAf","sourcesContent":["export var trashArr = new Array();"]},"metadata":{},"sourceType":"module"}
